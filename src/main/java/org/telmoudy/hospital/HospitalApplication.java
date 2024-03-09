@@ -25,7 +25,6 @@ public class HospitalApplication {
 			PatientRepository patientRepository,
 			DoctorRepository doctorRepository,
 			AppointmentRepository appointmentRepository
-
 	){
 		return args -> {
 
@@ -51,6 +50,12 @@ public class HospitalApplication {
 				patient3.setDate_naissance(d);
 				patient3.setScore(90);
 				patientRepository.save(patient3);
+				Patient patient4 = new Patient();
+				patient4.setFirstName("Emily");
+				patient4.setLastName("Johnson");
+				patient4.setDate_naissance(d);
+				patient4.setScore(90);
+				patientRepository.save(patient4);
 
 
 			Doctor doctor1 = new Doctor();
@@ -63,8 +68,8 @@ public class HospitalApplication {
 			Doctor doctor2 = new Doctor();
 			doctor2.setFirstName("Sarah");
 			doctor2.setLastName("Lee");
-			doctor1.setEmail("Sarah@gmail.com");
-			doctor1.setStatu("Active");
+			doctor2.setEmail("Sarah@gmail.com");
+			doctor2.setStatu("Active");
 			doctorRepository.save(doctor2);
 
 			doctor1.setEmail("Sarah@gmail.com");
@@ -72,9 +77,16 @@ public class HospitalApplication {
 			Doctor doctor3 = new Doctor();
 			doctor3.setFirstName("David");
 			doctor3.setLastName("Garcia");
-			doctor1.setEmail("David@gmail.com");
-			doctor1.setStatu("Active");
+			doctor3.setEmail("David@gmail.com");
+			doctor3.setStatu("Active");
 			doctorRepository.save(doctor3);
+
+				Doctor doctor4 = new Doctor();
+				doctor4.setFirstName("Michael");
+				doctor4.setLastName("Brown");
+				doctor4.setEmail("Michael@gmail.com");
+				doctor4.setStatu("Active");
+				doctorRepository.save(doctor4);
 
 			// Insert sample appointments
 			Appointment appointment1 = new Appointment();

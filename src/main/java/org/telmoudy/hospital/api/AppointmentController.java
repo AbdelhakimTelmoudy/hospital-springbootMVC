@@ -1,4 +1,4 @@
-package org.telmoudy.hospital.web;
+package org.telmoudy.hospital.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

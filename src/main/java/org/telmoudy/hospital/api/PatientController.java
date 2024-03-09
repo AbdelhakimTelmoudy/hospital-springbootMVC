@@ -1,5 +1,6 @@
-package org.telmoudy.hospital.web;
+package org.telmoudy.hospital.api;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.telmoudy.hospital.entities.Patient;
@@ -10,10 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/patients")
+@AllArgsConstructor
 public class PatientController {
 
-    @Autowired
-    private PatientService patientService;
+     PatientService patientService;
 
     @GetMapping
     public List<Patient> getAllPatients() {
@@ -28,7 +29,10 @@ public class PatientController {
         }
         return patient;
     }
-
+    @GetMapping("/filter")
+    public List<Patient> filterProducts(@RequestParam(name = "min",defaultValue = "0") int minPrice, @RequestParam(name = "max",defaultValue = "0") int maxPrice) {
+        return patientService.filterPatientsByScoreRange(minPrice, maxPrice);
+    }
     @PostMapping
     public Patient createPatient(@RequestBody Patient patient) {
         return patientService.saveOrUpdatePatient(patient);

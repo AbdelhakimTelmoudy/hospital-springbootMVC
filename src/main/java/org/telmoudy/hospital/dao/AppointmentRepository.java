@@ -5,4 +5,6 @@ import org.telmoudy.hospital.entities.Appointment;
 import org.telmoudy.hospital.entities.Doctor;
 
 public interface AppointmentRepository extends JpaRepository<Appointment,Long> {
+
+
 }
